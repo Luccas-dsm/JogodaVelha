@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogodaVelha.Pages.JogodaVelhaPage"
+             BackgroundColor="#FFF"
+             >
+
+    <Grid 
+        RowDefinitions="300,10,*,10,*,10,*,10" ColumnDefinitions="*,10,*,10,*" Padding="10" >
+         
+    
+        <Label x:Name="LbVitoria" TextColor="Black" FontSize="45"  HorizontalOptions="Center" ></Label>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="5"  RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="0">
+            <StackLayout BackgroundColor="#6DA653" ></StackLayout>
+            <StackLayout BackgroundColor="#F2E4BB" Grid.Column="1" ></StackLayout>
+        </Grid>
+      
+        <!--Divisorias-->
+        <Frame BackgroundColor="Tomato" Grid.Row="1" Grid.ColumnSpan="5"/>
+        <Frame BackgroundColor="Tomato" Grid.Row="3" Grid.ColumnSpan="5"/>
+        <Frame BackgroundColor="Tomato" Grid.Row="1" Grid.RowSpan="6" Grid.Column="1"/>
+        <Frame BackgroundColor="Tomato" Grid.Row="1" Grid.RowSpan="6" Grid.Column="3"/>
+
+        <!--Botões-->
+        <Button   Grid.Row="1"                 CornerRadius="10" BindingContext="8" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="3"                 CornerRadius="10" BindingContext="3" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="5"                 CornerRadius="10" BindingContext="4" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="1" Grid.Column="2" CornerRadius="10" BindingContext="1" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="1" Grid.Column="4" CornerRadius="10" BindingContext="6" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="3" Grid.Column="2" CornerRadius="10" BindingContext="5" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="3" Grid.Column="4" CornerRadius="10" BindingContext="7" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="5" Grid.Column="2" CornerRadius="10" BindingContext="9" FontSize="50" Clicked="Button_Clicked" Text=""/>
+        <Button   Grid.Row="5" Grid.Column="4" CornerRadius="10" BindingContext="2" FontSize="50" Clicked="Button_Clicked" Text=""/>
+
+    </Grid>
+
+</ContentPage>
