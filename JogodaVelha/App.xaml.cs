@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using JogodaVelha.Pages;
 
 namespace JogodaVelha
 {
@@ -10,7 +11,7 @@ namespace JogodaVelha
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new JogodaVelhaPage();
         }
 
         protected override void OnStart()
