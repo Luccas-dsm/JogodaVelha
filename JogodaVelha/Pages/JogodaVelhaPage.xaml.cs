@@ -145,6 +145,21 @@ namespace JogodaVelha.Pages
 
         }
 
+        private void Reiniciar_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void Desistir_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void Sair_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+
+     
     }
     
 }
