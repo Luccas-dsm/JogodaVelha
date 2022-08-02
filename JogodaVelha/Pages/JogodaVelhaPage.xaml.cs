@@ -18,7 +18,7 @@ namespace JogodaVelha.Pages
                                                       /*  0   1   2      3    4   5        6   7   8   */
 
 
-        public string[,] posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
+        public string[,] posicoes;
         /*  0    1    2       3    4    5      6    7    8   */
 
         
@@ -26,6 +26,17 @@ namespace JogodaVelha.Pages
         {
             InitializeComponent();
         }
+
+
+
+        public void Reiniciar()
+        {
+            posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
+
+
+        }
+
+
         private void Button_Clicked(object sender, EventArgs e)
         {
 
@@ -70,6 +81,8 @@ namespace JogodaVelha.Pages
             VitoriaDiagonalS(jogador);
 
         }
+
+
 
         public void VitoriaLinha(string jogador)
         {
@@ -160,6 +173,12 @@ namespace JogodaVelha.Pages
 
 
      
+    }
+
+    public class teste : Behavior<Button>
+    {
+
+        protected override
     }
     
 }
