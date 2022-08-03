@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="desistir.png" />
+    <None Remove="reiniciar.png" />
+    <None Remove="sair.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="desistir.png" />
+    <EmbeddedResource Include="reiniciar.png" />
+    <EmbeddedResource Include="sair.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
