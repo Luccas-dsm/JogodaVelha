@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Color = System.Drawing.Color;
 
 namespace JogodaVelha.Pages
 {
@@ -22,6 +24,7 @@ namespace JogodaVelha.Pages
         /*  0    1    2       3    4    5      6    7    8   */
 
 
+        public int NumerodeJogadas { get; set; } = 0;
         private string _botao;
         public string botao 
         { 
@@ -54,7 +57,7 @@ namespace JogodaVelha.Pages
         private void Button_Clicked(object sender, EventArgs e)
         {
 
-            if (!((Button)sender).BindingContext.ToString().Equals("X") && !((Button)sender).BindingContext.ToString().Equals("O"))
+            if (!((Button)sender).Text.Equals("X") && !((Button)sender).Text.Equals("O"))
             {
                 string pos = ((Button)sender).BindingContext.ToString();
                 if (Jogador == true)
@@ -72,9 +75,25 @@ namespace JogodaVelha.Pages
                     MarcaJogada(pos, ((Button)sender).Text);
                 }
                 Jogador = !Jogador;
+                NumerodeJogadas++;
             }
 
 
+        }
+
+        public void Velha()
+        {
+            if (NumerodeJogadas == 8)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (posicoes[i, j] != "X" || posicoes[i, j] != "O")
+                            LbVitoria.Text = "Vish! Parece que deu velha.";
+                    }
+                }
+            }
         }
 
         public void MarcaJogada(string valor, string jogador)
@@ -93,7 +112,7 @@ namespace JogodaVelha.Pages
             VitoriaColuna(jogador);
             VitoriaDiagonalP(jogador);
             VitoriaDiagonalS(jogador);
-
+            Velha();
         }
 
         public void VitoriaLinha(string jogador)
