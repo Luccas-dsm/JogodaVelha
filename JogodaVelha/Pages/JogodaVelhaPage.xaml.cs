@@ -21,6 +21,7 @@ namespace JogodaVelha.Pages
         public string[,] posicoes;
         /*  0    1    2       3    4    5      6    7    8   */
 
+
         private string _botao;
         public string botao 
         { 
@@ -36,20 +37,24 @@ namespace JogodaVelha.Pages
         public JogodaVelhaPage()
         {
             InitializeComponent();
-            BindingContext = this;
-            Reinicia();
+
+            Reiniciar();
         }
-        public void Reinicia()
+
+
+
+        public void Reiniciar()
         {
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
-            string botao = "Deu certo";
-            OnPropertyChanged(nameof(botao));
+
+
         }
+
 
         private void Button_Clicked(object sender, EventArgs e)
         {
 
-            if (!((Button)sender).Text.ToString().Equals("X") && !((Button)sender).Text.ToString().Equals("O"))
+            if (!((Button)sender).BindingContext.ToString().Equals("X") && !((Button)sender).BindingContext.ToString().Equals("O"))
             {
                 string pos = ((Button)sender).BindingContext.ToString();
                 if (Jogador == true)
@@ -164,6 +169,27 @@ namespace JogodaVelha.Pages
             }
 
         }
+
+        private void Reiniciar_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void Desistir_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void Sair_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+
+     
+    }
+
+    public class teste : Behavior<Button>
+    {
+
 
     }
     
