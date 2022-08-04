@@ -1,11 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JogodaVelha.Pages.MenuPage">
+             x:Class="JogodaVelha.Pages.MenuPage"
+             NavigationPage.HasNavigationBar="False"
+             >
 
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Button Text="Pagina do jogo" Clicked="Button_Clicked"/>
-    </StackLayout>
-        
+  
+     
+     <Grid  RowDefinitions="*,400,*" Grid.Row="1" Padding="10"    >
+
+        <Grid Grid.Row="1" RowDefinitions="*,5,*,5,*,5" ColumnDefinitions="*,5,*,5,*"   >
+
+            <!--Botões-->
+            <Button  BackgroundColor="#F2E4BB" Grid.Row="0"                 CornerRadius="10" BindingContext="8" FontSize="50" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text=""     />
+            <Button  BackgroundColor="#6DA653" Grid.Row="2"                 CornerRadius="10" BindingContext="3" FontSize="20" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text="HANKING"     />
+            <Button  BackgroundColor="#F2E4BB" Grid.Row="4"                 CornerRadius="10" BindingContext="4" FontSize="50" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text=""     />
+            <Button  BackgroundColor="#6DA653" Grid.Row="0" Grid.Column="2" CornerRadius="10" BindingContext="1" FontSize="50" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text=""     />
+            <Button  BackgroundColor="#F2E4BB" Grid.Row="0" Grid.Column="4" CornerRadius="10" BindingContext="6" FontSize="50" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text=""     />
+            <Button  BackgroundColor="#D91E2E" Grid.Row="2" Grid.Column="2" CornerRadius="10" BindingContext="5" FontSize="20" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text="START"      />
+            <Button  BackgroundColor="#6DA653" Grid.Row="2" Grid.Column="4" CornerRadius="10" BindingContext="7" FontSize="15" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text="JOGADORES"     />
+            <Button  BackgroundColor="#6DA653" Grid.Row="4" Grid.Column="2" CornerRadius="10" BindingContext="9" FontSize="50" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text=""     />
+            <Button  BackgroundColor="#F2E4BB" Grid.Row="4" Grid.Column="4" CornerRadius="10" BindingContext="2" FontSize="50" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text=""     />
+
+        </Grid>
+        <Image Source="background.gif" Grid.Row="2"/>
+
+    </Grid>
+
 </ContentPage>
