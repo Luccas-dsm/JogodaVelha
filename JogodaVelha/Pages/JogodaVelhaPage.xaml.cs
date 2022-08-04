@@ -41,12 +41,13 @@ namespace JogodaVelha.Pages
         {
             InitializeComponent();
 
-            Reiniciar();
+            Iniciar();
+            
         }
 
 
 
-        public void Reiniciar()
+        public void Iniciar()
         {
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
 
@@ -65,7 +66,6 @@ namespace JogodaVelha.Pages
                     ((Button)sender).Text = "X";
                     ((Button)sender).TextColor = Color.Coral;
                     MarcaJogada(pos, ((Button)sender).Text);
-
 
                 }
                 else
