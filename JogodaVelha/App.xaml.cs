@@ -11,7 +11,7 @@ namespace JogodaVelha
         {
             InitializeComponent();
 
-            MainPage = new JogodaVelhaPage();
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         protected override void OnStart()

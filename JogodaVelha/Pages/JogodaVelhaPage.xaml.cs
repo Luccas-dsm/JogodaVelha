@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Color = System.Drawing.Color;
+using JogodaVelha.Libs;
 
 namespace JogodaVelha.Pages
 {
@@ -16,41 +17,24 @@ namespace JogodaVelha.Pages
     {
         public bool Jogador { get; set; } = true;
 
-        /*public string[,] posicoes = new string[3, 3] { { "", "", "" }, { "", "", "" },  { "", "", "" } };
-                                                      /*  0   1   2      3    4   5        6   7   8   */
-
-
+        
         public string[,] posicoes;
-        /*  0    1    2       3    4    5      6    7    8   */
-
 
         public int NumerodeJogadas { get; set; } = 0;
-        private string _botao;
-        public string botao 
-        { 
-            get => _botao;
-            set 
-            {
-                    _botao = "";
-                    OnPropertyChanged(nameof(botao));
-            } 
-        }
+        
         
 
         public JogodaVelhaPage()
         {
             InitializeComponent();
-
             Iniciar();
             
         }
 
 
-
         public void Iniciar()
         {
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
-
 
         }
 
@@ -77,8 +61,6 @@ namespace JogodaVelha.Pages
                 Jogador = !Jogador;
                 NumerodeJogadas++;
             }
-
-
         }
 
         public void Velha()
@@ -117,7 +99,6 @@ namespace JogodaVelha.Pages
 
         public void VitoriaLinha(string jogador)
         {
-
             int igual = 1;
 
             for (int i = 0; i < 3; i++)
@@ -132,12 +113,10 @@ namespace JogodaVelha.Pages
                         LbVitoria.Text = $"Vitória do time {jogador}";
                 }
             }
-
         }
 
         public void VitoriaColuna(string jogador)
         {
-
             int igual = 1;
 
             for (int i = 0; i < 2; i++)
@@ -152,12 +131,9 @@ namespace JogodaVelha.Pages
                         LbVitoria.Text = $"Vitória do time {jogador}";
                 }
             }
-
         }
         public void VitoriaDiagonalP(string jogador)
         {
-
-
             int igual = 1;
 
             for (int i = 0; i < 2; i++)
