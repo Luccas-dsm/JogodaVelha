@@ -23,20 +23,23 @@ namespace JogodaVelha.Pages
 
         public int NumerodeJogadas { get; set; } = 0;
 
-        public Criajogador jogadores;
+        public Criajogador Jogadores { get; set; }
 
-        public JogodaVelhaPage()
+
+        public JogodaVelhaPage(Criajogador jogadores)
         {
             InitializeComponent();
-            Iniciar();           
+            this.Jogadores = jogadores;
+            Iniciar();
         }
 
 
         public void Iniciar()
         {
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
-            PontosO.Text = jogadores.RetornaPontuacao("O").ToString();
-            PontosX.Text = jogadores.RetornaPontuacao("X").ToString();
+
+            PontosO.Text = Jogadores.RetornaPontuacao("O").ToString();
+            PontosX.Text = Jogadores.RetornaPontuacao("X").ToString();
 
 
         }
@@ -90,13 +93,13 @@ namespace JogodaVelha.Pages
             if (VitoriaLinha() || VitoriaColuna() || VitoriaDiagonalP() || VitoriaDiagonalS())
             {
                 LbVitoria.Text = $"Vitória do time {jogador}";
-                jogadores.AdicionaPontos("X", 500);
+                Jogadores.AdicionaPontos(jogador, 500);
 
             }
             else if (Velha())
             {
                 LbVitoria.Text = "Vish! Parece que deu velha.";
-                jogadores.AdicionaPontos("O", 500);
+                
             }
         }
 

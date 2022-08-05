@@ -31,8 +31,7 @@ namespace JogodaVelha.Libs
                             item.Email,
                             item.Id,
                             item.Pontos
-                        }; 
-                    
+                        };                    
                     }
                 }   
             return jogador;
