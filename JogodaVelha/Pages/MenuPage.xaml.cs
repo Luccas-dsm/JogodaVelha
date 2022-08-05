@@ -21,5 +21,10 @@ namespace JogodaVelha.Pages
         {
             await Navigation.PushAsync(new JogodaVelhaPage());
         }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

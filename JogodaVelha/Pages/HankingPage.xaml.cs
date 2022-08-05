@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace JogodaVelha
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace JogodaVelha.Pages
 {
-    public partial class MainPage : Shell
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class HankingPage : ContentPage
     {
-        public MainPage()
+        public HankingPage()
         {
             InitializeComponent();
         }
