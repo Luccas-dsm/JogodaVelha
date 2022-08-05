@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Color = System.Drawing.Color;
 using JogodaVelha.Libs;
+using Xamarin.Essentials;
 
 namespace JogodaVelha.Pages
 {
@@ -48,14 +49,16 @@ namespace JogodaVelha.Pages
                 if (Jogador == true)
                 {
                     ((Button)sender).Text = "X";
-                    ((Button)sender).TextColor = Color.Coral;
+                    ((Button)sender).TextColor = Color.White;
+                    ((Button)sender).BackgroundColor = (Color)ColorConverters.FromHex("#6DA653");                 
                     MarcaJogada(pos, ((Button)sender).Text);
 
                 }
                 else
                 {
                     ((Button)sender).Text = "O";
-                    ((Button)sender).TextColor = Color.Blue;
+                    ((Button)sender).TextColor = Color.White;
+                    ((Button)sender).BackgroundColor = (Color)ColorConverters.FromHex("#F2E4BB");
                     MarcaJogada(pos, ((Button)sender).Text);
                 }
                 Jogador = !Jogador;
@@ -63,20 +66,7 @@ namespace JogodaVelha.Pages
             }
         }
 
-        public void Velha()
-        {
-            if (NumerodeJogadas == 8)
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        if (posicoes[i, j] != "X" || posicoes[i, j] != "O")
-                            LbVitoria.Text = "Vish! Parece que deu velha.";
-                    }
-                }
-            }
-        }
+     
 
         public void MarcaJogada(string valor, string jogador)
         {
@@ -90,14 +80,64 @@ namespace JogodaVelha.Pages
                 }
             }
 
-            VitoriaLinha(jogador);
-            VitoriaColuna(jogador);
-            VitoriaDiagonalP(jogador);
-            VitoriaDiagonalS(jogador);
-            Velha();
+            ConfereVitoria(jogador);
         }
 
-        public void VitoriaLinha(string jogador)
+        public void ConfereVitoria(string jogador)
+        {
+            //if(VitoriaLinha() || VitoriaColuna() || VitoriaDiagonalP() || VitoriaDiagonalS())
+            //{
+            //    LbVitoria.Text = $"Vitória do time {jogador}";
+            //}
+            //else if (Velha()) 
+            //{
+            //    LbVitoria.Text = "Vish! Parece que deu velha.";
+            //}
+            VitoriaLinha();
+
+            if(VitoriaLinha())
+            {
+                LbVitoria.Text = $"Vitória do time {jogador}";
+            }
+            else if (VitoriaColuna())
+            {
+                LbVitoria.Text = $"Vitória do time {jogador}";
+            }
+            else if (VitoriaDiagonalP())
+            {
+                LbVitoria.Text = $"Vitória do time {jogador}";
+            }
+            else if (VitoriaDiagonalS())
+            {
+                LbVitoria.Text = $"Vitória do time {jogador}";
+            }
+            else if (Velha())
+            {
+                LbVitoria.Text = "Vish! Parece que deu velha.";
+            }
+
+
+
+
+        }
+
+        public bool Velha()
+        {
+            if (NumerodeJogadas == 8)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (posicoes[i, j] != "X" || posicoes[i, j] != "O")
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool VitoriaLinha()
         {
             int igual = 1;
 
@@ -107,15 +147,20 @@ namespace JogodaVelha.Pages
                 {
                     if (posicoes[i, j] == posicoes[i, j + 1])
                     {
-                        igual++;
+                        igual+=1;
                     }
-                    if (igual == 4)
-                        LbVitoria.Text = $"Vitória do time {jogador}";
+                    if (igual == 3)
+                    {
+                        return true;
+                       
+                    }
                 }
+                igual = 1;
             }
+            return false;
         }
 
-        public void VitoriaColuna(string jogador)
+        public bool VitoriaColuna()
         {
             int igual = 1;
 
@@ -125,14 +170,18 @@ namespace JogodaVelha.Pages
                 {
                     if (posicoes[i, j] == posicoes[i + 1, j])
                     {
-                        igual++;
+                        igual+=1;
                     }
-                    if (igual == 4)
-                        LbVitoria.Text = $"Vitória do time {jogador}";
+                    if (igual == 3)
+                    {
+                        return true;
+                    }
                 }
+                igual = 1;
             }
+            return false;
         }
-        public void VitoriaDiagonalP(string jogador)
+        public bool VitoriaDiagonalP()
         {
             int igual = 1;
 
@@ -140,14 +189,17 @@ namespace JogodaVelha.Pages
             {
                 if (posicoes[i, i] == posicoes[i + 1, i + 1])
                 {
-                    igual++;
+                    igual+=1;
                 }
                 if (igual == 3)
-                    LbVitoria.Text = $"Vitória do time {jogador}";
+                {
+                    return true;
+                }
 
             }
+            return false;
         }
-        public void VitoriaDiagonalS(string jogador)
+        public bool VitoriaDiagonalS()
         {
 
             int igual = 1;
@@ -156,13 +208,15 @@ namespace JogodaVelha.Pages
             {
                 if (posicoes[i, 3 - i - 1] == posicoes[i + 1, 3 - i - 2])
                 {
-                    igual++;
+                    igual+=1;
                 }
                 if (igual == 3)
-                    LbVitoria.Text = $"Vitória do time {jogador}";
+                {
+                    return true;
+                }
 
             }
-
+            return false;
         }
 
         private  void Reiniciar_Clicked(object sender, EventArgs e)
