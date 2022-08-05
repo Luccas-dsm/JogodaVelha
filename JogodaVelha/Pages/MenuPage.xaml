@@ -19,7 +19,8 @@
             <Frame  BackgroundColor="#F2E4BB" Grid.Row="4"                 CornerRadius="10" BindingContext="4" />
             <Frame  BackgroundColor="#6DA653" Grid.Row="0" Grid.Column="2" CornerRadius="10" BindingContext="1" />
             <Frame  BackgroundColor="#F2E4BB" Grid.Row="0" Grid.Column="4" CornerRadius="10" BindingContext="6" />
-            <Button BackgroundColor="#D91E2E" Grid.Row="2" Grid.Column="2" CornerRadius="10" BindingContext="5" FontSize="20" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text="START"/>
+            <Button BackgroundColor="#D91E2E" Grid.Row="2" Grid.Column="2" CornerRadius="10" BindingContext="5"
+                    FontSize="20" Clicked="Button_Clicked" FontAttributes="Bold" TextColor="#FFF" Text="START"/>
             <Frame  BackgroundColor="#6DA653" Grid.Row="2" Grid.Column="4" CornerRadius="10" BindingContext="7" />
             <Frame  BackgroundColor="#6DA653" Grid.Row="4" Grid.Column="2" CornerRadius="10" BindingContext="9" />
             <Frame  BackgroundColor="#F2E4BB" Grid.Row="4" Grid.Column="4" CornerRadius="10" BindingContext="2" />
@@ -28,12 +29,11 @@
 
         <FlexLayout Grid.Row="3"  JustifyContent="SpaceEvenly" AlignItems="Center">
 
+            <ImageButton Source="hanking.png" WidthRequest="50" HeightRequest="50" BackgroundColor="#D91E2E"  CornerRadius="50" Clicked="Hanking_Clicked"/>
 
-            <ImageButton Source="homeico.png" WidthRequest="50" HeightRequest="50" BackgroundColor="#F2B84B"  CornerRadius="50"  />
+            <ImageButton Source="perfil.png" WidthRequest="50" HeightRequest="50" BackgroundColor="#1F67A6"   CornerRadius="50" Clicked="Perfil_Clicked"/>
 
-            <ImageButton Source="hanking.png" WidthRequest="50" HeightRequest="50" BackgroundColor="#D91E2E"  CornerRadius="50" />
-
-            <ImageButton Source="perfil.png" WidthRequest="50" HeightRequest="50" BackgroundColor="#1F67A6"   CornerRadius="50"/>
+            <ImageButton Source="sair.png" WidthRequest="50" HeightRequest="50" BackgroundColor="#7BA61F"  CornerRadius="50" Clicked="Sair_Clicked" />
 
         </FlexLayout>
 

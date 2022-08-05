@@ -22,9 +22,18 @@ namespace JogodaVelha.Pages
             await Navigation.PushAsync(new JogodaVelhaPage());
         }
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
+        private async void Sair_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new MenuPage());
         }
+        private async void Hanking_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HankingPage());
+        }
+        private async void Perfil_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PerfilPage());
+        }
+
     }
 }
