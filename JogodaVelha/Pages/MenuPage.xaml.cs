@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JogodaVelha.Libs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,19 @@ namespace JogodaVelha.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
+        private Criajogador jogadores;
+
         public MenuPage()
         {
+
+            jogadores = new Criajogador();
+            jogadores.NovoJogador("X", "testeX", "emailtesteX");
+            jogadores.NovoJogador("O", "testeO", "emailtesteO");
+            
             InitializeComponent();
+
+
+          
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

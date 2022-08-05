@@ -16,9 +16,9 @@ namespace JogodaVelha.Libs
      
         }
          
-        public List<object> BuscaJogador (string nome)
+        public object BuscaJogador (string nome)
         {
-            List<object> jogador= new List<object>();
+            object jogador= new List<object>();
           
                 foreach (var item in jogadorList)
                 {
@@ -37,6 +37,20 @@ namespace JogodaVelha.Libs
                 }   
             return jogador;
         }
+
+        public int RetornaPontuacao(string nome)
+        {
+            
+            foreach (var item in jogadorList)
+            {
+                if (item.Nome == nome)
+                {
+                    return item.Pontos;
+                }
+            }
+            return 0;
+        }
+
 
         public void AdicionaPontos(string nome, int pontos)
         {

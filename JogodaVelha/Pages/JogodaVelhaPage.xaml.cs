@@ -22,20 +22,22 @@ namespace JogodaVelha.Pages
         public string[,] posicoes;
 
         public int NumerodeJogadas { get; set; } = 0;
-        
-        
+
+        public Criajogador jogadores;
 
         public JogodaVelhaPage()
         {
             InitializeComponent();
-            Iniciar();
-            
+            Iniciar();           
         }
 
 
         public void Iniciar()
         {
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
+            PontosO.Text = jogadores.RetornaPontuacao("O").ToString();
+            PontosX.Text = jogadores.RetornaPontuacao("X").ToString();
+
 
         }
 
@@ -85,40 +87,17 @@ namespace JogodaVelha.Pages
 
         public void ConfereVitoria(string jogador)
         {
-            //if(VitoriaLinha() || VitoriaColuna() || VitoriaDiagonalP() || VitoriaDiagonalS())
-            //{
-            //    LbVitoria.Text = $"Vitória do time {jogador}";
-            //}
-            //else if (Velha()) 
-            //{
-            //    LbVitoria.Text = "Vish! Parece que deu velha.";
-            //}
-            VitoriaLinha();
+            if (VitoriaLinha() || VitoriaColuna() || VitoriaDiagonalP() || VitoriaDiagonalS())
+            {
+                LbVitoria.Text = $"Vitória do time {jogador}";
+                jogadores.AdicionaPontos("X", 500);
 
-            if(VitoriaLinha())
-            {
-                LbVitoria.Text = $"Vitória do time {jogador}";
-            }
-            else if (VitoriaColuna())
-            {
-                LbVitoria.Text = $"Vitória do time {jogador}";
-            }
-            else if (VitoriaDiagonalP())
-            {
-                LbVitoria.Text = $"Vitória do time {jogador}";
-            }
-            else if (VitoriaDiagonalS())
-            {
-                LbVitoria.Text = $"Vitória do time {jogador}";
             }
             else if (Velha())
             {
                 LbVitoria.Text = "Vish! Parece que deu velha.";
+                jogadores.AdicionaPontos("O", 500);
             }
-
-
-
-
         }
 
         public bool Velha()
