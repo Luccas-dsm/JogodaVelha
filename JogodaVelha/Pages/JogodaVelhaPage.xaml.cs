@@ -100,7 +100,6 @@ namespace JogodaVelha.Pages
             }
 
             //logica para detectar bugs em cada metodo
-
             //if(VitoriaLinha())
             //{
             //    LbVitoria.Text = $"Vitória do time {jogador}";
