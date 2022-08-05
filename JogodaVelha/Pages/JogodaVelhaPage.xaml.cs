@@ -36,18 +36,16 @@ namespace JogodaVelha.Pages
 
         public void Iniciar()
         {
-            posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
 
+            posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
             PontosO.Text = Jogadores.RetornaPontuacao("O").ToString();
             PontosX.Text = Jogadores.RetornaPontuacao("X").ToString();
-
 
         }
 
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
             if (!((Button)sender).Text.Equals("X") && !((Button)sender).Text.Equals("O"))
             {
                 string pos = ((Button)sender).BindingContext.ToString();
@@ -94,13 +92,41 @@ namespace JogodaVelha.Pages
             {
                 LbVitoria.Text = $"Vitória do time {jogador}";
                 Jogadores.AdicionaPontos(jogador, 500);
-
             }
             else if (Velha())
             {
                 LbVitoria.Text = "Vish! Parece que deu velha.";
-                
+
             }
+
+            //logica para detectar bugs em cada metodo
+
+            //if(VitoriaLinha())
+            //{
+            //    LbVitoria.Text = $"Vitória do time {jogador}";
+            //    Jogadores.AdicionaPontos(jogador, 500);
+            //}
+            //else if(VitoriaColuna())
+            //{
+            //    LbVitoria.Text = $"Vitória do time {jogador}";
+            //    Jogadores.AdicionaPontos(jogador, 500);
+            //}
+            //else if (VitoriaDiagonalP())
+            //{
+            //    LbVitoria.Text = $"Vitória do time {jogador}";
+            //    Jogadores.AdicionaPontos(jogador, 500);
+            //}
+            //else if (VitoriaDiagonalS())
+            //{
+            //    LbVitoria.Text = $"Vitória do time {jogador}";
+            //    Jogadores.AdicionaPontos(jogador, 500);
+            //}
+            //else if (Velha())
+            //{
+            //    LbVitoria.Text = "Vish! Parece que deu velha.";
+            //}
+
+
         }
 
         public bool Velha()
@@ -121,45 +147,33 @@ namespace JogodaVelha.Pages
 
         public bool VitoriaLinha()
         {
-            int igual = 1;
-
+           
             for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < 1; j++)
                 {
-                    if (posicoes[i, j] == posicoes[i, j + 1])
-                    {
-                        igual+=1;
-                    }
-                    if (igual == 3)
+                    if (posicoes[i, j] == posicoes[i, j+1] && posicoes[i, j] == posicoes[i, j+2])
                     {
                         return true;
-                       
                     }
                 }
-                igual = 1;
+              
             }
             return false;
         }
 
         public bool VitoriaColuna()
         {
-            int igual = 1;
-
-            for (int i = 0; i < 2; i++)
+            
+            for (int i = 0; i < 1; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (posicoes[i, j] == posicoes[i + 1, j])
-                    {
-                        igual+=1;
-                    }
-                    if (igual == 3)
+                    if (posicoes[i, j] == posicoes[i + 1, j ] && posicoes[i, j] == posicoes[i + 2, j])
                     {
                         return true;
-                    }
-                }
-                igual = 1;
+                    }     
+                }             
             }
             return false;
         }
@@ -183,7 +197,6 @@ namespace JogodaVelha.Pages
         }
         public bool VitoriaDiagonalS()
         {
-
             int igual = 1;
 
             for (int i = 0; i < 2; i++)
@@ -196,7 +209,6 @@ namespace JogodaVelha.Pages
                 {
                     return true;
                 }
-
             }
             return false;
         }
