@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JogodaVelha.Pages.HankingPage">
-    <ContentPage.Content>
+             x:Class="JogodaVelha.Pages.HankingPage"            
+             BackgroundColor="#6DA653"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <Grid RowDefinitions="100,*" Padding="15,0,15,0">
+
         <StackLayout>
-            <Label Text="Tela de Hanking!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="TOP HANKING" FontAttributes="BOLD" FontSize="30" TextColor="#FFF" HorizontalTextAlignment="Center"/>
         </StackLayout>
-    </ContentPage.Content>
+        
+        <Frame Grid.Row="1" BackgroundColor="#FFF" CornerRadius="10" Padding="0">
+            
+            <Grid RowDefinitions="200,*" ColumnDefinitions="*,*,*" Padding="5,5,5,0" >
+
+                <Grid BackgroundColor="blue" Grid.ColumnSpan="3">
+                    
+                </Grid>
+                <Grid BackgroundColor="green" Grid.Row="1"  Grid.ColumnSpan="3">
+
+                </Grid>
+            </Grid>
+        </Frame>
+    </Grid>
+    
 </ContentPage>

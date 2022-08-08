@@ -17,7 +17,6 @@ namespace JogodaVelha.Pages
         public MenuPage()
         {
             InitializeComponent();
-
             jogadores = new Criajogador();
             jogadores.NovoJogador("X", "testeX", "emailtesteX");
             jogadores.NovoJogador("O", "testeO", "emailtesteO");
@@ -29,9 +28,9 @@ namespace JogodaVelha.Pages
             await Navigation.PushAsync(new JogodaVelhaPage(jogadores));
         }
 
-        private async void Sair_Clicked(object sender, EventArgs e)
+        private  void Sair_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MenuPage());
+            System.Environment.Exit(0);
         }
         private async void Hanking_Clicked(object sender, EventArgs e)
         {
