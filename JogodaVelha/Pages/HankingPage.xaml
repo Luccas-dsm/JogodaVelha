@@ -4,23 +4,60 @@
              x:Class="JogodaVelha.Pages.HankingPage"            
              BackgroundColor="#6DA653"
              NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:JogodaVelha.Controls"
              >
     <Grid RowDefinitions="100,*" Padding="15,0,15,0">
 
         <StackLayout>
+            <ImageButton Source=""/>
             <Label Text="TOP HANKING" FontAttributes="BOLD" FontSize="30" TextColor="#FFF" HorizontalTextAlignment="Center"/>
         </StackLayout>
         
         <Frame Grid.Row="1" BackgroundColor="#FFF" CornerRadius="10" Padding="0">
             
-            <Grid RowDefinitions="200,*" ColumnDefinitions="*,*,*" Padding="5,5,5,0" >
+            <Grid RowDefinitions="200,*" ColumnDefinitions="*,*,*" Padding="10,5,10,0" >
 
-                <Grid BackgroundColor="blue" Grid.ColumnSpan="3">
-                    
+                <Grid  Grid.ColumnSpan="3" RowDefinitions="*,10" ColumnDefinitions="*,*,*">
+                    <Grid Grid.Column="0"  RowDefinitions="*,100">
+                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold"/>
+                        <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10" Padding="0">
+                            <Grid RowDefinitions="*,20" RowSpacing="0">
+                                <Label Text="2" FontSize="50" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="#000"/>
+                                <Label Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                    <Grid Grid.Column="1"  RowDefinitions="*,125">
+                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold"/>
+                        <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10">
+                            <Grid RowDefinitions="*,20" RowSpacing="0">
+                                <Label Text="1" FontSize="60" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="#000"/>
+                                <Label Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000" HorizontalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                    <Grid Grid.Column="2" RowDefinitions="*,100">
+                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold"/>
+                        <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10" Padding="0">
+                            
+                            <Grid RowDefinitions="*,20" RowSpacing="0">
+                                <Label Text="3" FontSize="50" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="#000"/>
+                                <Label Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                    <Frame Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="#D91E2E" Padding="0" CornerRadius="10"/>
                 </Grid>
-                <Grid BackgroundColor="green" Grid.Row="1"  Grid.ColumnSpan="3">
+                <ScrollView  Grid.Row="1"  Grid.ColumnSpan="3" >
+                               
+                    <StackLayout  Padding="5" Spacing="20" x:Name="ContainerHank">
 
-                </Grid>
+                     
+                        
+
+
+                    </StackLayout>
+                </ScrollView>
             </Grid>
         </Frame>
     </Grid>

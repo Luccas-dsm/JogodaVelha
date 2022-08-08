@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogodaVelha.Controls.PosicaoHankView">
+
+    <Frame HeightRequest="80" BackgroundColor="#F7F7F7" CornerRadius="10" Padding="5">
+        <Grid ColumnDefinitions="70,*" Padding="5" >
+            <Frame CornerRadius="50" BackgroundColor="#10477C" Padding="0" WidthRequest="60">
+                <Label Text="1º" TextColor="#FFF" FontAttributes="Bold" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" x:Name="Posicao"/>
+            </Frame>
+            <StackLayout Grid.Column="1" >
+                <Label Text="Nome do Jogador" TextColor="#000" HorizontalOptions="Center" FontSize="20" x:Name="Nome"/>
+                <Label Text="0000" TextColor="#000" HorizontalOptions="Center" FontSize="20" x:Name="Pontuacao"/>
+            </StackLayout>
+        </Grid>
+    </Frame>
+</ContentView>
