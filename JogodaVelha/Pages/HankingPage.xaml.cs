@@ -19,7 +19,6 @@ namespace JogodaVelha.Pages
             GeraHank();
         }
 
-
         public void GeraHank()
         {
             List<Jogador> lista = ListaPosicoes();
@@ -31,10 +30,7 @@ namespace JogodaVelha.Pages
                 ContainerHank.Children.Add(obj);
 
             }
-
         }
-
-
         public List<Jogador> ListaPosicoes()
         {
             var lista = new List<Jogador>()
@@ -57,7 +53,6 @@ namespace JogodaVelha.Pages
         public string Nome { get; set; }
         public int Pontos { get; set; }
         public int Posicao { get; set; }
-
-      
+     
     }
 }
