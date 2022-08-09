@@ -1,12 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JogodaVelha.Pages.PerfilPage">
-    <ContentPage.Content>
+             x:Class="JogodaVelha.Pages.PerfilPage"
+             NavigationPage.HasNavigationBar="False"      
+             BackgroundColor="#6DA653"
+             
+             >
+
+
+
+    <Grid RowDefinitions="100,*" Padding="15,0,15,0">
+
         <StackLayout>
-            <Label Text="Tela de Perfil!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ImageButton Source=""/>
+            <Label Text="PERFIL" FontAttributes="BOLD" FontSize="30" TextColor="#FFF" HorizontalTextAlignment="Center"/>
         </StackLayout>
-    </ContentPage.Content>
+
+        <Frame Grid.Row="1" BackgroundColor="#FFF" CornerRadius="10" Padding="0">
+
+            <Grid RowDefinitions="250,70,70,70,70,*" Padding="10,10,10,0" >
+
+                <Grid  Grid.Row="0" Padding="0" RowDefinitions="20,150,*" ColumnDefinitions="*,150,*"  >
+                    <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="#D1D1D1" CornerRadius="100"   HeightRequest="100" WidthRequest="100" Padding="5">
+                        <Image Source="perfil.png"  />
+                    </Frame>
+                    <Label Text="NOME/APELIDO" TextColor="#10477C" FontSize="20" Grid.Row="2" Grid.Column="1"/>
+                </Grid>
+
+                <StackLayout  Grid.Row="1" Padding="5">
+                    <Label Text="PONTUAÇÃO TOTAL" TextColor="#10477C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="2" Padding="5">
+                    <Label Text="NÚMERO DE PARTIDAS" TextColor="#10477C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                </StackLayout>
+                
+                <StackLayout  Grid.Row="3" Padding="5">
+                    <Label Text="QUANTIDADE DE VITÓRIAS" TextColor="#10477C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                </StackLayout>
+                
+                <StackLayout  Grid.Row="4" Padding="5">
+                    <Label Text="QUANTIDADE DE DERROTAS" TextColor="#10477C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                </StackLayout>
+
+
+
+            </Grid>
+        </Frame>
+    </Grid>
+
 </ContentPage>
