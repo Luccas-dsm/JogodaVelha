@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 using Xamarin.Essentials;
 
 namespace JogodaVelha.Libs
@@ -9,6 +10,7 @@ namespace JogodaVelha.Libs
     {
 
         private List<Jogador> jogadorList = new List<Jogador>();
+        public List<Jogador> RetornaListadeJogadores() => jogadorList;
 
         public void NovoJogador(string nome,string apelido, string email)
         {       
@@ -83,5 +85,55 @@ namespace JogodaVelha.Libs
             }
         }
 
+
+        public void MockdeDados()
+        {
+            List<Mock> lista = ListaMockada();
+            Random random = new Random(); 
+
+            foreach (var item in lista)
+            {
+                jogadorList.Add(new Jogador(item.Nome, item.Apelido, item.Email));
+            }
+
+            foreach (var item in lista)
+            {
+                AdicionaPontos(item.Nome, (int)random.Next(0,1000));
+
+            }
+        }
+
+   
+
+        public List<Mock> ListaMockada()
+        {
+           List<Mock> lista = new List<Mock>()
+            {
+                new Mock { Nome="Luccas",Apelido="Luc",Email="@email", Pontos=1500,Posicao=1},
+                 new Mock { Nome="Marcelly",Apelido="Luc",Email="@email",Pontos=1500,Posicao=2},
+                  new Mock { Nome="Luiza",Apelido="Luc",Email="@email",Pontos=1500,Posicao=3},
+                   new Mock { Nome="Márcia",Apelido="Luc",Email="@email",Pontos=1500,Posicao=4},
+                    new Mock { Nome="Rogério",Apelido="Luc",Email="@email",Pontos=1500,Posicao=5},
+                     new Mock { Nome="Kátia",Apelido="Luc",Email="@email",Pontos=1500,Posicao=6},
+                      new Mock { Nome="Victor",Apelido="Luc",Email="@email",Pontos=1500,Posicao=7},
+                       new Mock { Nome="Lobo",Apelido="Luc",Email="@email",Pontos=1500,Posicao=8},
+            };
+            return lista;
+        }
+
+
     }
+
+    public class Mock
+    {
+        public int Id { get; set; } = 1;
+        public string Nome { get; set; }
+        public string Apelido { get; set; }
+        public string Email { get; set; }
+        public int Pontos { get; set; } = 0;
+        public int Posicao { get; set; }
+      
+
+    }
+
 }

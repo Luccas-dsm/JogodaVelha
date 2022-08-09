@@ -24,27 +24,27 @@
                     <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="#D1D1D1" CornerRadius="100"   HeightRequest="100" WidthRequest="100" Padding="5">
                         <Image Source="perfil.png"  />
                     </Frame>
-                    <Label Text="NOME/APELIDO" TextColor="#10477C" FontSize="20" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="NOME/APELIDO" TextColor="#10477C" FontSize="20" Grid.Row="2" Grid.Column="1"  x:Name="lbNome" HorizontalTextAlignment="Center"/>
                 </Grid>
 
                 <StackLayout  Grid.Row="1" Padding="5">
                     <Label Text="PONTUAÇÃO TOTAL" TextColor="#10477C" FontSize="20"/>
-                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20" x:Name="LbPtotal"/>
                 </StackLayout>
 
                 <StackLayout  Grid.Row="2" Padding="5">
                     <Label Text="NÚMERO DE PARTIDAS" TextColor="#10477C" FontSize="20"/>
-                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20" x:Name="LbNpartidas"/>
                 </StackLayout>
                 
                 <StackLayout  Grid.Row="3" Padding="5">
                     <Label Text="QUANTIDADE DE VITÓRIAS" TextColor="#10477C" FontSize="20"/>
-                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20" x:Name="LbQvitorias"/>
                 </StackLayout>
                 
                 <StackLayout  Grid.Row="4" Padding="5">
                     <Label Text="QUANTIDADE DE DERROTAS" TextColor="#10477C" FontSize="20"/>
-                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20"/>
+                    <Label Text="0000" TextColor="#CE1C1C" FontSize="20" x:Name="LbQderrotas"/>
                 </StackLayout>
 
 

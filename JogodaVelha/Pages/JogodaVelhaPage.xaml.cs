@@ -26,20 +26,20 @@ namespace JogodaVelha.Pages
         public Criajogador Jogadores { get; set; }
 
 
-        public JogodaVelhaPage(Criajogador jogadores)
+        public JogodaVelhaPage(Criajogador Jogador)
         {
             InitializeComponent();
-            this.Jogadores = jogadores;
+            this.Jogadores = Jogador;
             Iniciar();
+            
         }
 
 
         public void Iniciar()
         {
-
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
-            PontosO.Text = Jogadores.RetornaPontuacao("O").ToString();
-            PontosX.Text = Jogadores.RetornaPontuacao("X").ToString();
+            PontosO.Text = Jogadores.RetornaPontuacao("Luccas").ToString();
+            PontosX.Text = Jogadores.RetornaPontuacao("Marcelly").ToString();
 
         }
 

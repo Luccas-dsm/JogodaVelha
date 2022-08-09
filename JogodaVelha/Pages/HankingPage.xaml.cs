@@ -7,52 +7,68 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using JogodaVelha.Controls;
-
+using JogodaVelha.Libs;
 namespace JogodaVelha.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HankingPage : ContentPage
     {
+
+        private Criajogador Jogadores;
         public HankingPage()
         {
+            InitializeComponent();         
+        }
+
+
+        public HankingPage(Criajogador jogador)
+        {
             InitializeComponent();
+            this.Jogadores = jogador;
             GeraHank();
         }
 
+
         public void GeraHank()
         {
-            List<Jogador> lista = ListaPosicoes();
 
-
+            int posicao = 1;
+            List<Jogador> jogadorList = Jogadores.RetornaListadeJogadores();           
+            List<Jogador> lista = (from e in jogadorList
+                                   orderby e.Pontos descending
+                                   select e).ToList()  ;
+       
             foreach (var item in lista)
             {
-                var obj = new PosicaoHankView(item.Nome, item.Pontos, item.Posicao);
-                ContainerHank.Children.Add(obj);
 
+                switch (posicao)
+                {
+                    case 1:
+                        lbNomeP.Text = item.Nome;
+                        lbPontosP.Text = item.Pontos.ToString();
+                        break;
+                    case 2:
+                        lbNomeS.Text=item.Nome;
+                        lbPontosS.Text = item.Pontos.ToString();
+                        break;
+                    case 3:
+                        lbNomeT.Text = item.Nome;
+                        lbPontosT.Text = item.Pontos.ToString();
+                        break;
+                    default:
+                        var obj = new PosicaoHankView(item.Nome, item.Pontos, posicao, Jogadores);
+                        ContainerHank.Children.Add(obj);
+                        break;
+                }
+                     posicao++;    
+              
             }
         }
-        public List<Jogador> ListaPosicoes()
-        {
-            var lista = new List<Jogador>()
-            {
-                new Jogador { Nome="Luccas",Pontos=1500,Posicao=1},
-                 new Jogador { Nome="Marcelly",Pontos=1500,Posicao=2},
-                  new Jogador { Nome="Luiza",Pontos=1500,Posicao=3},
-                   new Jogador { Nome="Márcia",Pontos=1500,Posicao=4},
-                    new Jogador { Nome="Rogério",Pontos=1500,Posicao=5},
-                     new Jogador { Nome="Kátia",Pontos=1500,Posicao=6},
-                      new Jogador { Nome="Victor",Pontos=1500,Posicao=7},
-                       new Jogador { Nome="Lobo",Pontos=1500,Posicao=8},
-            };
-            return lista;
-        }
 
+        private async void Jogador_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PerfilPage(Jogadores, ((Button)sender).Text));
+        }
     }
-    public class Jogador
-    {
-        public string Nome { get; set; }
-        public int Pontos { get; set; }
-        public int Posicao { get; set; }
-     
-    }
+
 }

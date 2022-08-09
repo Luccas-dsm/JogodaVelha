@@ -19,30 +19,30 @@
 
                 <Grid  Grid.ColumnSpan="3" RowDefinitions="*,10" ColumnDefinitions="*,*,*">
                     <Grid Grid.Column="0"  RowDefinitions="*,100">
-                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold"/>
+                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold" x:Name="lbPontosS"/>
                         <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10" Padding="0">
                             <Grid RowDefinitions="*,20" RowSpacing="0">
-                                <Label Text="2" FontSize="50" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="#000"/>
-                                <Label Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000" HorizontalOptions="Center" VerticalOptions="Start"/>
+                                <Label Text="2" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End" TextColor="#000" />
+                                <Button  BackgroundColor="Transparent" Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000"  x:Name="lbNomeS" Clicked="Jogador_Clicked" Padding="0"/>
                             </Grid>
                         </Frame>
                     </Grid>
                     <Grid Grid.Column="1"  RowDefinitions="*,125">
-                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold"/>
-                        <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10">
+                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold" x:Name="lbPontosP"/>
+                        <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10" Padding="0">
                             <Grid RowDefinitions="*,20" RowSpacing="0">
-                                <Label Text="1" FontSize="60" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="#000"/>
-                                <Label Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000" HorizontalOptions="Center"/>
+                                <Label  Text="1" FontSize="60" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End" TextColor="#000" />
+                                <Button BackgroundColor="Transparent" Grid.Row="1"  FontSize="15" FontAttributes="Bold" TextColor="#000"  x:Name="lbNomeP" Clicked="Jogador_Clicked" Padding="0"/>
                             </Grid>
                         </Frame>
                     </Grid>
                     <Grid Grid.Column="2" RowDefinitions="*,100">
-                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold"/>
+                        <Label Text="0000" TextColor="#10477C" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="30" FontAttributes="Bold" x:Name="lbPontosT"/>
                         <Frame HeightRequest="50" BackgroundColor="#F2B84B" Grid.Row="1" CornerRadius="10" Padding="0">
                             
                             <Grid RowDefinitions="*,20" RowSpacing="0">
-                                <Label Text="3" FontSize="50" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="#000"/>
-                                <Label Grid.Row="1" Text="Nome" FontSize="15" FontAttributes="Bold" TextColor="#000" HorizontalOptions="Center" VerticalOptions="Start"/>
+                                <Label Text="3" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End" TextColor="#000"  />
+                                <Button BackgroundColor="Transparent" Grid.Row="1"  FontSize="15" FontAttributes="Bold" TextColor="#000"  x:Name="lbNomeT" Clicked="Jogador_Clicked" Padding="0"/>
                             </Grid>
                         </Frame>
                     </Grid>

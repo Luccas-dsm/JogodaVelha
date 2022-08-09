@@ -18,8 +18,7 @@ namespace JogodaVelha.Pages
         {
             InitializeComponent();
             jogadores = new Criajogador();
-            jogadores.NovoJogador("X", "testeX", "emailtesteX");
-            jogadores.NovoJogador("O", "testeO", "emailtesteO");
+            jogadores.MockdeDados();
 
         }
 
@@ -34,11 +33,11 @@ namespace JogodaVelha.Pages
         }
         private async void Hanking_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HankingPage());
+            await Navigation.PushAsync(new HankingPage(jogadores));
         }
         private async void Perfil_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PerfilPage());         
+            await Navigation.PushAsync(new PerfilPage(jogadores));         
         }
 
     }
