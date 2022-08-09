@@ -2,13 +2,17 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using JogodaVelha.Pages;
+using JogodaVelha.Libs;
 
 namespace JogodaVelha
 {
     public partial class App : Application
     {
+
+  
         public App()
         {
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new MenuPage());

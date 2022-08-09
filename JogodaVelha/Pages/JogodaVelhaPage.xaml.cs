@@ -25,6 +25,9 @@ namespace JogodaVelha.Pages
 
         public Criajogador Jogadores { get; set; }
 
+        public string Jogador1 { get; set; }
+
+        public string Jogador2 { get; set; }
 
         public JogodaVelhaPage(Criajogador Jogador)
         {
@@ -38,8 +41,17 @@ namespace JogodaVelha.Pages
         public void Iniciar()
         {
             posicoes = new string[3, 3] { { "8", "1", "6" }, { "3", "5", "7" }, { "4", "9", "2" } };
-            PontosO.Text = Jogadores.RetornaPontuacao("Luccas").ToString();
-            PontosX.Text = Jogadores.RetornaPontuacao("Marcelly").ToString();
+
+
+            Jogador1 = "Luccas";
+            Jogador2 = "Marcelly";
+
+            PontosO.Text = Jogadores.RetornaPontuacao(Jogador1).ToString();
+            PontosX.Text = Jogadores.RetornaPontuacao(Jogador2).ToString();
+
+
+
+            
 
         }
 
@@ -71,7 +83,7 @@ namespace JogodaVelha.Pages
 
      
 
-        public void MarcaJogada(string valor, string jogador)
+        public void MarcaJogada(string valor, string peao)
         {
 
             for (int i = 0; i < 3; i++)
@@ -79,19 +91,31 @@ namespace JogodaVelha.Pages
                 for (int j = 0; j < 3; j++)
                 {
                     if (valor == posicoes[i, j])
-                        posicoes[i, j] = jogador;
+                        posicoes[i, j] = peao;
                 }
             }
-
-            ConfereVitoria(jogador);
+            
+            ConfereVitoria(peao);
         }
 
-        public void ConfereVitoria(string jogador)
+        public void ConfereVitoria(string peao)
         {
             if (VitoriaLinha() || VitoriaColuna() || VitoriaDiagonalP() || VitoriaDiagonalS())
             {
-                LbVitoria.Text = $"Vitória do time {jogador}";
-                Jogadores.AdicionaPontos(jogador, 500);
+                LbVitoria.Text = $"Vitória do time {peao}";
+
+                if (peao.Equals("X"))
+                {
+                    Jogadores.AdicionaPontos(Jogador2, 500);
+                    Jogadores.AdicionaVitorias(Jogador2);
+                    Jogadores.AdicionaDerrotas(Jogador1);
+                }
+                else
+                {
+                    Jogadores.AdicionaPontos(Jogador1, 500);
+                    Jogadores.AdicionaVitorias(Jogador1);
+                    Jogadores.AdicionaDerrotas(Jogador2);
+                }
             }
             else if (Velha())
             {

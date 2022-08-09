@@ -59,10 +59,34 @@ namespace JogodaVelha.Libs
             {
                 if (item.Nome == nome)
                 {
-                    item.Pontos += pontos;                       
+                    item.Pontos += pontos;
+               
                 }
             }
         }
+        public void AdicionaDerrotas(string nome)
+        {
+            foreach (var item in jogadorList)
+            {
+                if (item.Nome == nome)
+                {
+                    item.Derrotas+=1;
+                    item.Partidas+=1;
+                }
+            }
+        }
+        public void AdicionaVitorias(string nome)
+        {
+            foreach (var item in jogadorList)
+            {
+                if (item.Nome == nome)
+                {
+                    item.Vitorias += 1;
+                    item.Partidas += 1;
+                }
+            }
+        }
+
 
         public void EditarJogador(string nome, string email="", string apelido ="", string nomeNovo="" )
         {
@@ -109,14 +133,14 @@ namespace JogodaVelha.Libs
         {
            List<Mock> lista = new List<Mock>()
             {
-                new Mock { Nome="Luccas",Apelido="Luc",Email="@email", Pontos=1500,Posicao=1},
-                 new Mock { Nome="Marcelly",Apelido="Luc",Email="@email",Pontos=1500,Posicao=2},
-                  new Mock { Nome="Luiza",Apelido="Luc",Email="@email",Pontos=1500,Posicao=3},
-                   new Mock { Nome="Márcia",Apelido="Luc",Email="@email",Pontos=1500,Posicao=4},
-                    new Mock { Nome="Rogério",Apelido="Luc",Email="@email",Pontos=1500,Posicao=5},
-                     new Mock { Nome="Kátia",Apelido="Luc",Email="@email",Pontos=1500,Posicao=6},
-                      new Mock { Nome="Victor",Apelido="Luc",Email="@email",Pontos=1500,Posicao=7},
-                       new Mock { Nome="Lobo",Apelido="Luc",Email="@email",Pontos=1500,Posicao=8},
+                new Mock { Nome="Luccas",Apelido="Luc",Email="@email",Posicao=1},
+                 new Mock { Nome="Marcelly",Apelido="Luc",Email="@email",Posicao=2},
+                  new Mock { Nome="Luiza",Apelido="Luc",Email="@email",Posicao=3},
+                   new Mock { Nome="Márcia",Apelido="Luc",Email="@email",Posicao=4},
+                    new Mock { Nome="Rogério",Apelido="Luc",Email="@email",Posicao=5},
+                     new Mock { Nome="Kátia",Apelido="Luc",Email="@email",Posicao=6},
+                      new Mock { Nome="Victor",Apelido="Luc",Email="@email",Posicao=7},
+                       new Mock { Nome="Lobo",Apelido="Luc",Email="@email",Posicao=8},
             };
             return lista;
         }

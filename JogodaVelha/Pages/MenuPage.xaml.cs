@@ -12,14 +12,14 @@ namespace JogodaVelha.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
-        private Criajogador jogadores;
+        private Criajogador jogadores = new Criajogador();
+
 
         public MenuPage()
         {
-            InitializeComponent();
-            jogadores = new Criajogador();
+    
+            InitializeComponent();      
             jogadores.MockdeDados();
-
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
